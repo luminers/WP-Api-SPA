@@ -1,0 +1,70 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a{
+    color: #f06;
+    transition: color 0.4s ease;
+}
+a:hover{
+    color: #f00;
+}
+
+h1{
+    text-align: center;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+
+}
+
+.posts{
+    display: flex;
+    flex-flow: row wrap;
+   
+    justify-content: space-around;
+}
+
+.post-card{
+   
+    height: 400px;
+    width: 300px;
+    margin: 10px 0;
+    background: #ccc;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+
+
+.post-img{
+    
+    max-width: 100%;
+    max-height: 50%;
+}
