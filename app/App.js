@@ -1,9 +1,4 @@
 //Componente padre
-import wp_api from "./helpers/wp_api.js";
-import {
-    ajax
-} from "./helpers/ajax.js";
-
 import {
     Loader
 } from "./components/Loader.js";
@@ -13,9 +8,8 @@ import {
 import {
     Posts
 } from "./components/Posts.js";
-import {
-    PostCard
-} from "./components/PostCard.js";
+
+import { Router } from "./components/Router.js";
 
 export function App() {
 
@@ -26,21 +20,8 @@ export function App() {
     $root.appendChild(Loader());
     $root.appendChild(Posts());
 
-    ajax({
-        url: wp_api.POSTS,
-        cbSucces: (posts) => {
-            console.log(posts)
-            let postHtml = "";
-
-            posts.forEach((post) => (postHtml += PostCard(post)));
-          
-
-            d.querySelector(".loader").style.display = "none";
-            d.getElementById("posts").innerHTML = postHtml;
-
-
-        }
-    });
+    Router();
+    
 
 
 
