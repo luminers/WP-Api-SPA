@@ -14,7 +14,8 @@ export function ajax(props) {
         </div>
         `
         console.log(err);
-
+        document.querySelector(".loader").style.display="none";
+        document.getElementById("posts").classList.add("error-msj");
     })
 
 

@@ -5,7 +5,10 @@ import { PostCard } from "./PostCard.js";
 const d=document;  
 
 export function Router(){
+let w=window;
+let {hash}=location;
 
+console.log(hash);
 
     ajax({
         url: wp_api.POSTS,
