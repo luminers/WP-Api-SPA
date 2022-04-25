@@ -2,14 +2,16 @@ import wp_api from "../helpers/wp_api.js";
 import { ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
 
-const d=document;  
+
 
 export function Router(){
+const d=document;  
 let w=window;
+const $posts=d.getElementById("posts");
 let {hash}=location;
 
-console.log(hash);
 
+if (!hash || hash==="#/") {
     ajax({
         url: wp_api.POSTS,
         cbSucces: (posts) => {
@@ -25,6 +27,23 @@ console.log(hash);
 
         }
     });
+}else if(hash.includes("#/Busqueda")){
+    $posts.innerHTML="<h2>Seccion de busqueda</h2>";
+}else if(hash==="#/contacto"){
+    $posts.innerHTML="<h2>Seccion de contacto</h2>";
+}else{
+    $posts.innerHTML="<h2>Previamente seleccionado</h2>";
+}
+
+
+
+
+
+
+
+
+console.log(hash);
+
 
 
 
