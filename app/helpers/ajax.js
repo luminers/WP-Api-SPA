@@ -7,7 +7,7 @@ export function ajax(props) {
     .catch(err =>{
         let message=err.statusText || "Ocurrio un problema";
 
-        document.getElementById("posts").innerHTML=
+        document.getElementById("main").innerHTML=
         `
         <div class="error">
             <p>Error ${err.status}: ${message}</p>
@@ -15,7 +15,7 @@ export function ajax(props) {
         `
         console.log(err);
         document.querySelector(".loader").style.display="none";
-        document.getElementById("posts").classList.add("error-msj");
+        document.getElementById("main").classList.add("error-msj");
     })
 
 

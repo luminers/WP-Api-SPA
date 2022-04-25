@@ -7,32 +7,32 @@ import { PostCard } from "./PostCard.js";
 export function Router(){
 const d=document;  
 let w=window;
-const $posts=d.getElementById("posts");
+const $main=d.getElementById("main");
 let {hash}=location;
 
 
-if (!hash || hash==="#/") {
+if (!hash || hash==="#/" || hash==="#/Inicio") {
     ajax({
         url: wp_api.POSTS,
         cbSucces: (posts) => {
-            console.log(posts)
+            console.log(main)
             let postHtml = "";
 
             posts.forEach((post) => (postHtml += PostCard(post)));
           
 
             d.querySelector(".loader").style.display = "none";
-            d.getElementById("posts").innerHTML = postHtml;
+            d.getElementById("main").innerHTML = postHtml;
 
 
         }
     });
 }else if(hash.includes("#/Busqueda")){
-    $posts.innerHTML="<h2>Seccion de busqueda</h2>";
+    $main.innerHTML="<h2>Seccion de busqueda</h2>";
 }else if(hash==="#/contacto"){
-    $posts.innerHTML="<h2>Seccion de contacto</h2>";
+    $main.innerHTML="<h2>Seccion de contacto</h2>";
 }else{
-    $posts.innerHTML="<h2>Previamente seleccionado</h2>";
+    $main.innerHTML="<h2>Previamente seleccionado</h2>";
 }
 
 
