@@ -4,7 +4,7 @@ import { PostCard } from "./PostCard.js";
 
 
 
-export function Router(){
+export async function Router(){
 const d=document;  
 let w=window;
 const $main=d.getElementById("main");
@@ -12,7 +12,7 @@ let {hash}=location;
 
 
 if (!hash || hash==="#/" || hash==="#/Inicio") {
-    ajax({
+    await ajax({
         url: wp_api.POSTS,
         cbSucces: (posts) => {
             console.log(main)
@@ -35,7 +35,7 @@ if (!hash || hash==="#/" || hash==="#/Inicio") {
     $main.innerHTML="<h2>Previamente seleccionado</h2>";
 }
 
-
+d.querySelector(".loader").style.display="none"
 
 
 
