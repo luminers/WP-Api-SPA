@@ -1,9 +1,9 @@
 //Invocacion de otros componentes
 //Delegacion de eventos
 
-import {App} from"./App.js";
+import { App } from "./App.js";
 
 const d = document;
 
-d.addEventListener("DOMContentLoaded",App); 
-window.addEventListener("hashchange",App);
+d.addEventListener("DOMContentLoaded", App);
+window.addEventListener("hashchange", App);
